@@ -1,0 +1,444 @@
+/* ================================= 
+  Base Element Styles
+==================================== */
+:root {
+  --curve: 40;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: "Varela Round", sans-serif;
+  line-height: 1.6;
+  color: #3a3a3a;
+  margin: 0;
+  /* height: 100vh; */
+  /* min-height: 100vh; */
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+p {
+  font-size: 0.95em;
+  margin-bottom: 1.8em;
+}
+h2,
+h3,
+a {
+  color: grey;
+}
+h2,
+h3 {
+  margin-top: 0;
+}
+a {
+  text-decoration: none;
+}
+/* img {
+  max-width: 100%;
+} */
+
+/* ================================= 
+  Base Layout Styles
+==================================== */
+
+/* ---- Navigation ---- */
+
+.name {
+  font-size: 1.35em;
+  margin: 0;
+}
+.main-nav {
+  margin-top: 5px;
+}
+.name a,
+.main-nav a {
+  text-align: center;
+  display: block;
+  padding: 10px 15px;
+  color: white;
+}
+.main-nav a {
+  font-size: 0.95em;
+  color: white;
+  text-transform: uppercase;
+}
+.main-nav a:hover {
+  color: red;
+}
+
+/* ---- Layout Containers ---- */
+
+.nav .main-header {
+  /* padding-top: 1em; */
+
+  /* padding-bottom: 1em; */
+  background-color: grey;
+  position: fixed;
+  transition: all 0.3s ease-in-out;
+  z-index: 2;
+}
+.nav.active {
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+.nav.active a {
+  color: black;
+}
+/* .nav.active:hover{
+  background-color: white;
+} */
+.nav.active .main-header {
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+
+  padding-top: 0em;
+
+  padding-bottom: 0em;
+}
+.banner,
+.main-footer {
+  text-align: center;
+}
+.banner {
+  color: #fff;
+  /* background: ; */
+  padding: 3.2em 0;
+  margin-bottom: 0;
+  margin-top: 96px;
+  position: relative;
+
+  /* max-width: 100%; */
+  /* height: auto; */
+  /* z-index: 1 ; */
+}
+.banner .logo {
+  max-width: 80%; /* Ensure the image scales down to fit its container */
+  height: auto;
+}
+/* Hero Section Styling */
+.hero {
+  padding-top: 4.5em;
+}
+.hero .banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10em;
+
+  /* position: relative; */
+  overflow: hidden; /* Ensure the content doesn't overflow the viewport */
+  height: 85vh; /* Full viewport height */
+
+  background-image: url("../img/bakcgroundimage.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; /* Scale width to 100% and height to auto */
+  /* background-color: white; */
+  /* z-index: 1; */
+}
+
+.hero .banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+.hero .banner .logo,
+.headline,
+.tagline {
+  /* position: relative; */
+  padding-top: 0.5em;
+  z-index: 1;
+}
+
+.col {
+  padding-right: 1em;
+  padding-left: 1em;
+}
+.main-footer {
+  background: #d9e4ea;
+  padding: 2em 0;
+  margin: 0;
+  margin-top: 30px;
+}
+.row {
+  display: flex;
+  /* width: 90vh; */
+  flex-direction: column;
+  flex: 1;
+}
+
+.primary {
+  display: flex;
+  height: 90vh;
+}
+
+.section-title h2,
+h3 {
+  padding-bottom: 0.5em;
+  padding-top: 0.5em;
+  text-align: center;
+  color: black;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 2px 10px rgba(231, 44, 44, 0.36);
+  border-radius: 40px;
+}
+
+.primary .panel {
+  background-size: auto 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  border-radius: 50px;
+
+  cursor: pointer;
+  flex: 0.5;
+  margin: 10px;
+  position: relative;
+  transition: flex 0.7s ease-in;
+}
+.panel h3 {
+  font-size: 24px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+  color: white;
+  box-shadow: 5px 2px 10px rgba(0, 0, 0, 0);
+  border-radius: 0;
+}
+.panel.active {
+  flex: 5;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+.panel.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+
+/* */
+
+/* ---- Page Elements ---- */
+
+.logo {
+  width: 20em;
+  border-radius: 25px;
+  /* opacity: ; */
+}
+.headline {
+  margin-bottom: 0;
+}
+/* .secondary {
+  justify-content: center;
+  align-items: center;
+  object-fit: cover;
+} */
+/* ================================= 
+ cards
+==================================== */
+.card-container {
+  display: flex;
+  /* display-direction: row; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+.card {
+  width: 325px;
+  background-color: #d9e4ea;
+  border-radius: 9px;
+  overflow: hidden;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+  margin: 10px;
+  text-align: center;
+  transition: all 0.25s;
+}
+.card img {
+  width: 100%;
+  height: auto;
+}
+.card-content h3 {
+  padding: 16px;
+}
+.card-content p {
+  color: black;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+/* ====================================
+  form
+==================================== */
+/* Style inputs */
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type="submit"] {
+  background-color: #04aa6d;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Style the container/contact section */
+.form-container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+/* Create two columns that float next to eachother */
+.form-col {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+}
+
+/* Clear floats after the columns */
+.form-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .form-col,
+  input[type="submit"] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+/* ================================= 
+  Media Queries
+==================================== */
+
+@media (max-width: 730px) {
+  .main-header {
+    width: 100%;
+    padding-top: 0em;
+    padding-bottom: 0em;
+
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+  }
+  .main-nav a {
+    font-size: 0.8em;
+    padding-top: 0.2em;
+  }
+
+  /* Add any additional styles or adjustments as needed for smaller screens */
+}
+@media (min-width: 730px) {
+  .main-header,
+  .row {
+    width: 100%;
+    margin: 0 auto;
+    width: 100%;
+
+    /* max-width: 1150px; */
+  }
+  .banner {
+    padding: 1em 1em; /* Increase padding for the banner */
+    margin-top: 5em;
+  }
+
+  .banner .logo {
+    width: fit-content;
+    max-width: 40%; /* Make the logo take the full width of its container */
+    height: auto;
+  }
+  .tagline {
+    font-size: 1.4em;
+  }
+  /* .main-header,
+  .main-nav,
+  .row {
+    display: flex;
+  }
+
+  .main-header {
+    flex-direction: column;
+    align-items: center;
+  } */
+
+  .col {
+    flex: 1 50%;
+  }
+
+  .row {
+    flex-wrap: wrap;
+  }
+
+  .secondary {
+    order: -1;
+  }
+}
+@media (min-width: 730px) {
+  .main-header,
+  .main-nav {
+    display: flex;
+  }
+  .main-header {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+/* ================================= 
+  Media Queries
+==================================== */
+
+@media (min-width: 1025px) {
+  .main-header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .banner {
+    padding: 1em 1em; /* Increase padding for the banner */
+  }
+
+  .banner .logo {
+    width: fit-content;
+    max-width: 40%; /* Make the logo take the full width of its container */
+    height: auto;
+  }
+
+  .col {
+    flex-basis: 0;
+  }
+
+  .primary {
+    flex-grow: 1.4;
+  }
+}

@@ -1,0 +1,611 @@
+/* ================================= 
+  Base Element Styles
+==================================== */
+:root {
+  --curve: 40;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: "Varela Round", sans-serif;
+  line-height: 1.6;
+  color: #3a3a3a;
+  margin: 0;
+  /* height: 100vh; */
+  /* min-height: 100vh; */
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+p {
+  font-size: 0.95em;
+  margin-bottom: 1.8em;
+}
+h2,
+h3,
+a {
+  color: grey;
+}
+h2,
+h3 {
+  margin-top: 0;
+}
+a {
+  text-decoration: none;
+}
+/* img {
+    max-width: 100%;
+  } */
+
+/* ================================= 
+    Base Layout Styles
+  ==================================== */
+
+/* ---- Navigation ---- */
+
+.name {
+  font-size: 1.35em;
+  margin: 0;
+}
+.main-nav {
+  margin-top: 5px;
+}
+.name a,
+.main-nav a {
+  text-align: center;
+  display: block;
+  padding: 10px 15px;
+  color: white;
+}
+.main-nav a {
+  font-size: 0.95em;
+  color: white;
+  text-transform: uppercase;
+}
+.main-nav a:hover {
+  color: red;
+}
+
+/* ---- Layout Containers ---- */
+
+.nav .main-header {
+  /* padding-top: 1em; */
+
+  /* padding-bottom: 1em; */
+  background-color: grey;
+  position: fixed;
+  transition: all 0.3s ease-in-out;
+  z-index: 2;
+}
+.nav.active {
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+.nav.active a {
+  color: black;
+}
+/* .nav.active:hover{
+    background-color: white;
+  } */
+.nav.active .main-header {
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+
+  padding-top: 0em;
+
+  padding-bottom: 0em;
+}
+.banner,
+.main-footer {
+  text-align: center;
+}
+.banner {
+  color: #fff;
+  /* background: ; */
+  padding: 3.2em 0;
+  margin-bottom: 0;
+  margin-top: 96px;
+  position: relative;
+
+  /* max-width: 100%; */
+  /* height: auto; */
+  /* z-index: 1 ; */
+}
+.banner .logo {
+  max-width: 80%; /* Ensure the image scales down to fit its container */
+  height: auto;
+}
+/* Hero Section Styling */
+.hero {
+  padding-top: 4.5em;
+}
+.hero .banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10em;
+
+  /* position: relative; */
+  overflow: hidden; /* Ensure the content doesn't overflow the viewport */
+  height: 85vh; /* Full viewport height */
+
+  background-image: url("../img/bakcgroundimage.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; /* Scale width to 100% and height to auto */
+  /* background-color: white; */
+  /* z-index: 1; */
+}
+
+.hero .banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+.hero .banner .logo,
+.headline,
+.tagline {
+  /* position: relative; */
+  padding-top: 0.5em;
+  z-index: 1;
+}
+
+.col {
+  padding-right: 1em;
+  padding-left: 1em;
+}
+.main-footer {
+  background: #d9e4ea;
+  padding: 2em 0;
+  margin: 0;
+  margin-top: 30px;
+}
+.row {
+  display: flex;
+  /* width: 90vh; */
+  flex-direction: column;
+  flex: 1;
+}
+
+.primary {
+  display: flex;
+  height: 90vh;
+}
+
+.section-title h2,
+h3 {
+  padding-bottom: 0.5em;
+  padding-top: 0.5em;
+  text-align: center;
+  color: black;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 2px 10px rgba(231, 44, 44, 0.36);
+  border-radius: 40px;
+}
+
+.primary .panel {
+  background-size: auto 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  border-radius: 50px;
+
+  cursor: pointer;
+  flex: 0.5;
+  margin: 10px;
+  position: relative;
+  transition: flex 0.7s ease-in;
+}
+.panel h3 {
+  font-size: 24px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+  color: white;
+  box-shadow: 5px 2px 10px rgba(0, 0, 0, 0);
+  border-radius: 0;
+}
+.panel.active {
+  flex: 5;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+.panel.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+
+/* */
+
+/* ---- Page Elements ---- */
+
+.logo {
+  width: 20em;
+  border-radius: 25px;
+  /* opacity: ; */
+}
+.headline {
+  margin-bottom: 0;
+}
+/* .secondary {
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
+  } */
+/* ================================= 
+   cards
+  ==================================== */
+.projcard-container {
+  margin: 50px 0;
+}
+
+/* Actual Code: */
+.projcard-container,
+.projcard-container * {
+  box-sizing: border-box;
+  /* display: flex;
+    flex-direction: column; */
+}
+.projcard-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1000px;
+}
+.projcard {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  margin-bottom: 40px;
+  border-radius: 10px;
+  background-color: #fff;
+  border: 2px solid #ddd;
+  font-size: 18px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.projcard:hover {
+  box-shadow: 0 34px 32px -33px rgba(0, 0, 0, 0.18);
+  transform: translate(0px, -3px);
+}
+.projcard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(-70deg, #424242, transparent 50%);
+  opacity: 0.07;
+}
+.projcard:nth-child(2n)::before {
+  background-image: linear-gradient(-250deg, #424242, transparent 50%);
+}
+.projcard-innerbox {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.projcard-img {
+  position: absolute;
+  height: 300px;
+  width: 400px;
+  top: 0;
+  left: 0;
+  transition: transform 0.2s ease;
+}
+.projcard:nth-child(2n) .projcard-img {
+  left: initial;
+  right: 0;
+}
+.projcard:hover .projcard-img {
+  transform: scale(1.05) rotate(1deg);
+}
+.projcard:hover .projcard-bar {
+  width: 70px;
+}
+.projcard-textbox {
+  position: absolute;
+  top: 7%;
+  bottom: 7%;
+  left: 430px;
+  width: calc(100% - 470px);
+  font-size: 17px;
+}
+.projcard:nth-child(2n) .projcard-textbox {
+  left: initial;
+  right: 430px;
+}
+.projcard-textbox::before,
+.projcard-textbox::after {
+  content: "";
+  position: absolute;
+  display: block;
+  background: #ff0000bb;
+  background: #fff;
+  top: -20%;
+  left: -55px;
+  height: 140%;
+  width: 60px;
+  transform: rotate(8deg);
+}
+.projcard:nth-child(2n) .projcard-textbox::before {
+  display: none;
+}
+.projcard-textbox::after {
+  display: none;
+  left: initial;
+  right: -55px;
+}
+.projcard:nth-child(2n) .projcard-textbox::after {
+  display: block;
+}
+.projcard-textbox * {
+  position: relative;
+}
+.projcard-title {
+  font-family: "Voces", "Open Sans", arial, sans-serif;
+  font-size: 24px;
+}
+.projcard-subtitle {
+  font-family: "Voces", "Open Sans", arial, sans-serif;
+  color: #888;
+}
+.projcard-bar {
+  left: -2px;
+  width: 50px;
+  height: 5px;
+  margin: 10px 0;
+  border-radius: 5px;
+  background-color: #424242;
+  transition: width 0.2s ease;
+}
+.projcard-blue .projcard-bar {
+  background-color: #0088ff;
+}
+.projcard-blue::before {
+  background-image: linear-gradient(-70deg, #0088ff, transparent 50%);
+}
+.projcard-blue:nth-child(2n)::before {
+  background-image: linear-gradient(-250deg, #0088ff, transparent 50%);
+}
+.projcard-red .projcard-bar {
+  background-color: #d62f1f;
+}
+.projcard-red::before {
+  background-image: linear-gradient(-70deg, #d62f1f, transparent 50%);
+}
+.projcard-red:nth-child(2n)::before {
+  background-image: linear-gradient(-250deg, #d62f1f, transparent 50%);
+}
+.projcard-green .projcard-bar {
+  background-color: #40bd00;
+}
+.projcard-green::before {
+  background-image: linear-gradient(-70deg, #40bd00, transparent 50%);
+}
+.projcard-green:nth-child(2n)::before {
+  background-image: linear-gradient(-250deg, #40bd00, transparent 50%);
+}
+.projcard-yellow .projcard-bar {
+  background-color: #f5af41;
+}
+.projcard-yellow::before {
+  background-image: linear-gradient(-70deg, #f5af41, transparent 50%);
+}
+.projcard-yellow:nth-child(2n)::before {
+  background-image: linear-gradient(-250deg, #f5af41, transparent 50%);
+}
+.projcard-orange .projcard-bar {
+  background-color: #ff5722;
+}
+.projcard-orange::before {
+  background-image: linear-gradient(-70deg, #ff5722, transparent 50%);
+}
+.projcard-orange:nth-child(2n)::before {
+  background-image: linear-gradient(-250deg, #ff5722, transparent 50%);
+}
+.projcard-brown .projcard-bar {
+  background-color: #c49863;
+}
+.projcard-brown::before {
+  background-image: linear-gradient(-70deg, #c49863, transparent 50%);
+}
+.projcard-brown:nth-child(2n)::before {
+  background-image: linear-gradient(-250deg, #c49863, transparent 50%);
+}
+.projcard-grey .projcard-bar {
+  background-color: #424242;
+}
+.projcard-grey::before {
+  background-image: linear-gradient(-70deg, #424242, transparent 50%);
+}
+.projcard-grey:nth-child(2n)::before {
+  background-image: linear-gradient(-250deg, #424242, transparent 50%);
+}
+.projcard-customcolor .projcard-bar {
+  background-color: var(--projcard-color);
+}
+.projcard-customcolor::before {
+  background-image: linear-gradient(
+    -70deg,
+    var(--projcard-color),
+    transparent 50%
+  );
+}
+.projcard-customcolor:nth-child(2n)::before {
+  background-image: linear-gradient(
+    -250deg,
+    var(--projcard-color),
+    transparent 50%
+  );
+}
+.projcard-description {
+  z-index: 10;
+  font-size: 15px;
+  color: #424242;
+  height: 125px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.projcard-tagbox {
+  position: absolute;
+  bottom: 3%;
+  font-size: 14px;
+  cursor: default;
+  user-select: none;
+  pointer-events: none;
+}
+.projcard-tag {
+  display: inline-block;
+  background: #e0e0e0;
+  color: #777;
+  border-radius: 3px 0 0 3px;
+  line-height: 26px;
+  padding: 0 10px 0 23px;
+  position: relative;
+  margin-right: 20px;
+  cursor: default;
+  user-select: none;
+  transition: color 0.2s;
+}
+.projcard-tag::before {
+  content: "";
+  position: absolute;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
+  height: 6px;
+  left: 10px;
+  width: 6px;
+  top: 10px;
+}
+.projcard-tag::after {
+  content: "";
+  position: absolute;
+  border-bottom: 13px solid transparent;
+  border-left: 10px solid #e0e0e0;
+  border-top: 13px solid transparent;
+  right: -10px;
+  top: 0;
+}
+
+/* ================================= 
+    Media Queries
+  ==================================== */
+@media (max-width: 730px) {
+  .main-header {
+    width: 100%;
+    padding-top: 0em;
+    padding-bottom: 0em;
+
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+  }
+  .main-nav a {
+    font-size: 0.8em;
+    padding-top: 0.2em;
+  }
+
+  /* Add any additional styles or adjustments as needed for smaller screens */
+}
+@media (min-width: 730px) {
+  .main-header,
+  .row {
+    width: 100%;
+    margin: 0 auto;
+    width: 100%;
+
+    /* max-width: 1150px; */
+  }
+  .banner {
+    padding: 1em 1em; /* Increase padding for the banner */
+    margin-top: 5em;
+  }
+
+  .banner .logo {
+    width: fit-content;
+    max-width: 40%; /* Make the logo take the full width of its container */
+    height: auto;
+  }
+  .tagline {
+    font-size: 1.4em;
+  }
+  /* .main-header,
+    .main-nav,
+    .row {
+      display: flex;
+    }
+  
+    .main-header {
+      flex-direction: column;
+      align-items: center;
+    } */
+
+  .col {
+    flex: 1 50%;
+  }
+
+  .row {
+    flex-wrap: wrap;
+  }
+
+  .secondary {
+    order: -1;
+  }
+}
+@media (min-width: 730px) {
+  .main-header,
+  .main-nav {
+    display: flex;
+  }
+  .main-header {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+/* ================================= 
+    Media Queries
+  ==================================== */
+
+@media (min-width: 1025px) {
+  .main-header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .banner {
+    padding: 1em 1em; /* Increase padding for the banner */
+  }
+
+  .banner .logo {
+    width: fit-content;
+    max-width: 40%; /* Make the logo take the full width of its container */
+    height: auto;
+  }
+
+  .col {
+    flex-basis: 0;
+  }
+
+  .primary {
+    flex-grow: 1.4;
+  }
+}
