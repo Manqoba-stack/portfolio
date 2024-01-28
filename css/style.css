@@ -124,7 +124,7 @@ a {
 }
 /* Hero Section Styling */
 .hero {
-  padding-top: 4.5em;
+  /* padding-top: 4.5em; */
 }
 .hero .banner {
   display: flex;
@@ -135,7 +135,7 @@ a {
 
   /* position: relative; */
   overflow: hidden; /* Ensure the content doesn't overflow the viewport */
-  height: 85vh; /* Full viewport height */
+  height: 100vh; /* Full viewport height */
 
   background-image: url("../img/bakcgroundimage.jpg");
   background-repeat: no-repeat;
@@ -268,6 +268,7 @@ h3 {
   margin: 10px;
   text-align: center;
   transition: all 0.25s;
+  width: 100%;
 }
 .card img {
   width: 100%;
@@ -337,6 +338,7 @@ input[type="submit"]:hover {
   .form-col,
   input[type="submit"] {
     width: 100%;
+    /* height: 100%; */
     margin-top: 0;
   }
 }
@@ -347,12 +349,13 @@ input[type="submit"]:hover {
 @media (max-width: 730px) {
   .main-header {
     width: 100%;
-    padding-top: 0em;
-    padding-bottom: 0em;
+    /* padding-top: 0em;
+    padding-bottom: 0em; */
 
     justify-content: center; /* Center content horizontally */
     align-items: center; /* Center content vertically */
   }
+
   .main-nav a {
     font-size: 0.8em;
     padding-top: 0.2em;
@@ -363,15 +366,16 @@ input[type="submit"]:hover {
 @media (min-width: 730px) {
   .main-header,
   .row {
-    width: 100%;
     margin: 0 auto;
     width: 100%;
+    /* height: 10%; */
 
     /* max-width: 1150px; */
   }
   .banner {
-    padding: 1em 1em; /* Increase padding for the banner */
-    margin-top: 5em;
+    /* padding: 1em 1em; */
+    padding-top: 10em;
+    margin-top: 1em;
   }
 
   .banner .logo {
@@ -404,6 +408,28 @@ input[type="submit"]:hover {
   .secondary {
     order: -1;
   }
+  .form-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    justify-content: center;
+    position: relative;
+    /* margin-left:10%; */
+    align-items: center;
+    width: 90%;
+  }
+  .form-col-img {
+    margin: 0;
+
+    max-height: auto;
+    max-width: 300px;
+  }
 }
 @media (min-width: 730px) {
   .main-header,
@@ -425,7 +451,9 @@ input[type="submit"]:hover {
     justify-content: space-between;
   }
   .banner {
-    padding: 1em 1em; /* Increase padding for the banner */
+    /* padding: 1em 1em; */
+    padding-top: 10em;
+    margin-top: 1em;
   }
 
   .banner .logo {
@@ -440,5 +468,21 @@ input[type="submit"]:hover {
 
   .primary {
     flex-grow: 1.4;
+  }
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+
+    margin: auto;
+
+    /* justify-content: center; */
+    /* margin-right:15%; */
+    /* align-items: center; */
+  }
+
+  .form-col-img {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
