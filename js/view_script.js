@@ -45,7 +45,7 @@ function fetchData() {
       cellName.textContent = childData.name;
       cellEmail.textContent = childData.email;
       cellSubject.textContent = childData.subject;
-      cellCreatedAt.textContent =" childData.createdAt;";
+      cellCreatedAt.textContent = childData.createdAt;
     });
   });
 }

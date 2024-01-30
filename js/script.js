@@ -42,7 +42,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (window.location.hash === "#view") {
     // Manually redirect to the specified page
-    window.location.href = "view.html";
+    var username = prompt("Enter your username:");
+    var password = prompt("Enter your password:");
+
+    var isAuthenticated = authenticateUser(username, password);
+
+    if (isAuthenticated) {
+      // Manually redirect to the specified page if login is successful
+      window.location.href = "view.html";
+    } else {
+      // Handle unsuccessful login (e.g., show an error message)
+      alert("Login unsuccessful. Please try again.");
+    }
   }
 
   form.addEventListener("submit", function (event) {
