@@ -88,9 +88,6 @@ a {
   color: black;
   padding: 2px;
 }
-/* .nav.active:hover{
-  background-color: white;
-} */
 
 .nav.active .main-header {
   background-color: white;
@@ -112,13 +109,9 @@ a {
   margin-bottom: 0;
   margin-top: 96px;
   position: relative;
-
-  /* width: 100%; */
-  /* height: auto; */
-  /* z-index: 1 ; */
 }
 .banner .logo {
-  max-width: 80%; /* Ensure the image scales down to fit its container */
+  max-width: 80%;
   height: auto;
 }
 /* Hero Section Styling */
@@ -374,7 +367,6 @@ a:hover img {
     font-size: 0.8em;
     padding-top: 0.2em;
   }
-
 }
 @media (min-width: 730px) {
   .main-header,
@@ -384,9 +376,11 @@ a:hover img {
     /* height: 10%; */
 
     /* max-width: 1150px; */
+    .nav.active a {
+      padding: 10px;
+    }
   }
   .banner {
-  
     padding-top: 10em;
     margin-top: 1em;
   }
@@ -432,7 +426,6 @@ a:hover img {
     opacity: 1;
     transition: opacity 0.3s ease-out 0.2s;
   }
-
 
   .col {
     flex: 1 50%;
@@ -497,7 +490,7 @@ a:hover img {
 
   .banner .logo {
     width: fit-content;
-    max-width: 40%; 
+    max-width: 40%;
     height: auto;
   }
 
