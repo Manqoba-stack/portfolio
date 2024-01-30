@@ -40,6 +40,11 @@ function removeActiveClasses() {
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.querySelector("form");
 
+  if (window.location.hash === "#view") {
+    // Manually redirect to the specified page
+    window.location.href = "your-page.html";
+  }
+
   form.addEventListener("submit", function (event) {
     event.preventDefault();
 
@@ -57,8 +62,8 @@ document.addEventListener("DOMContentLoaded", function () {
         createdAt: createdAt,
       })
       .then(function () {
-        // Form successfully submitted
-        alert("Form submitted successfully!");
+        alert("Message submitted successfully!");
+        form.reset();
       });
   });
 });
