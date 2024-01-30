@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (window.location.hash === "#view") {
     // Manually redirect to the specified page
-    window.location.href = "your-page.html";
+    window.location.href = "view.html";
   }
 
   form.addEventListener("submit", function (event) {
