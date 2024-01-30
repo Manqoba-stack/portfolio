@@ -1,9 +1,7 @@
 /* ================================= 
   Base Element Styles
 ==================================== */
-:root {
-  --curve: 40;
-}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -16,8 +14,6 @@ body {
   line-height: 1.6;
   color: #3a3a3a;
   margin: 0;
-  /* height: 100vh; */
-  /* min-height: 100vh; */
 }
 ul {
   margin: 0;
@@ -39,25 +35,6 @@ h3 {
 }
 a {
   text-decoration: none;
-}
-/* img {
-  max-width: 100%;
-} */
-.data-table {
-  border-collapse: collapse;
-  width: 100%;
-  margin-top: 20px;
-}
-
-.data-table th,
-.data-table td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
-}
-
-.data-table th {
-  background-color: #f2f2f2;
 }
 
 /* ================================= 
@@ -97,6 +74,7 @@ a {
   /* padding-bottom: 1em; */
   background-color: grey;
   position: fixed;
+  /* width: 100%; */
   transition: all 0.3s ease-in-out;
   z-index: 2;
 }
@@ -118,6 +96,7 @@ a {
 
   padding-bottom: 0em;
 }
+
 .banner,
 .main-footer {
   text-align: center;
@@ -130,7 +109,7 @@ a {
   margin-top: 96px;
   position: relative;
 
-  /* max-width: 100%; */
+  /* width: 100%; */
   /* height: auto; */
   /* z-index: 1 ; */
 }
@@ -139,7 +118,9 @@ a {
   height: auto;
 }
 /* Hero Section Styling */
-
+.hero {
+  width: fit-content;
+}
 .hero .banner {
   display: flex;
   flex-direction: column;
@@ -173,6 +154,7 @@ a {
 .headline,
 .tagline {
   /* position: relative; */
+
   padding-top: 0.5em;
   z-index: 1;
 }
@@ -196,6 +178,8 @@ a {
 
 .primary {
   display: flex;
+  width: 85%;
+  /* flex-direction: row; */
   height: 90vh;
 }
 
@@ -224,7 +208,7 @@ h3 {
   flex: 0.5;
   margin: 10px;
   position: relative;
-  transition: flex 0.7s ease-in;
+  transition: flex 0.5s ease-in;
 }
 .panel h3 {
   font-size: 24px;
@@ -341,7 +325,9 @@ input[type="submit"] {
 input[type="submit"]:hover {
   background-color: #45a049;
 }
-
+a:hover img {
+  opacity: 0.8;
+}
 /* Style the container/contact section */
 .form-container {
   border-radius: 5px;
