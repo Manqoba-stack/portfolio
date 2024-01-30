@@ -55,7 +55,9 @@ document.addEventListener("DOMContentLoaded", function () {
       alert("Login unsuccessful. Please try again.");
     }
   }
-
+  function authenticateUser(username, password) {
+    return password === "password" && username === "admin";
+  }
   form.addEventListener("submit", function (event) {
     event.preventDefault();
 
