@@ -40,7 +40,7 @@ function removeActiveClasses() {
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.querySelector("form");
 
-  if (window.location.hash === "#view") {
+  if (window.location.hash === "#view" || window.location.hash === "view") {
     // Manually redirect to the specified page
     var username = prompt("Enter your username:");
     var password = prompt("Enter your password:");
@@ -53,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       // Handle unsuccessful login (e.g., show an error message)
       alert("Login unsuccessful. Please try again.");
+      
     }
   }
   function authenticateUser(username, password) {
