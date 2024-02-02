@@ -124,7 +124,7 @@ a {
   justify-content: center;
   align-items: center;
   padding-bottom: 10em;
-  /* position: relative; */
+ 
   overflow: hidden; /* Ensure the content doesn't overflow the viewport */
   height: 100vh; /* Full viewport height */
 
@@ -132,8 +132,7 @@ a {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover; /* Scale width to 100% and height to auto */
-  /* background-color: white; */
-  /* z-index: 1; */
+
 }
 
 .hero .banner::before {
@@ -149,7 +148,6 @@ a {
 .hero .banner .logo,
 .headline,
 .tagline {
-  /* position: relative; */
 
   padding-top: 0.5em;
   z-index: 1;
@@ -167,7 +165,7 @@ a {
 }
 .row {
   display: flex;
-  /* width: 90vh; */
+
   flex-direction: column;
   flex: 1;
 }
@@ -175,7 +173,7 @@ a {
 .primary {
   display: flex;
   width: 85%;
-  /* flex-direction: row; */
+ 
   height: 90vh;
 }
 
@@ -271,7 +269,7 @@ h3 {
 }
 .card {
   width: 325px;
-  background-color: #d9e4ea;
+  background-color: white;
   border-radius: 9px;
   overflow: hidden;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
@@ -326,7 +324,7 @@ a:hover img {
 /* Style the container/contact section */
 .form-container {
   border-radius: 5px;
-  background-color: #f2f2f2;
+  background-color: ;
   padding: 10px;
 }
 
@@ -378,13 +376,8 @@ a:hover img {
   .row {
     margin: 0 auto;
     width: 100%;
-    /* height: 10%; */
-
-    /* max-width: 1150px; */
   }
-  /* .nav.active a {
-      padding: 1px;
-    } */
+
   .banner {
     padding-top: 10em;
     margin-top: 1em;
@@ -411,11 +404,7 @@ a:hover img {
    
     font-size: 1em;
     
-  } /*
-  .panel.active p {
-    opacity: 1;
-    transition: opacity 0.3s ease-out 0.2s;
-  } */
+  } 
 
   .col {
     flex: 1 50%;
@@ -471,13 +460,9 @@ a:hover img {
     justify-content: space-between;
   }
   .banner {
-    /* padding: 1em 1em; */
     padding-top: 10em;
     margin-top: 1em;
   }
-  /* .panel.active p {
-    font-size: 1.2em;
-  } */
 
   .banner .logo {
     width: fit-content;
@@ -498,10 +483,6 @@ a:hover img {
     gap: 1em;
 
     margin: auto;
-
-    /* justify-content: center; */
-    /* margin-right:15%; */
-    /* align-items: center; */
   }
 
   .form-col-img {

@@ -42,10 +42,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (window.location.hash === "#view" || window.location.hash === "view") {
     // Manually redirect to the specified page
-    var username = prompt("Enter your username:");
-    var password = prompt("Enter your password:");
+    let username = prompt("Enter your username:");
+    let password = prompt("Enter your password:");
 
-    var isAuthenticated = authenticateUser(username, password);
+    let isAuthenticated = authenticateUser(username, password);
 
     if (isAuthenticated) {
       // Manually redirect to the specified page if login is successful
