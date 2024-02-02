@@ -269,7 +269,7 @@ h3 {
 }
 .card {
   width: 325px;
-  background-color: white;
+  background-color: #ccc;
   border-radius: 9px;
   overflow: hidden;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
@@ -324,7 +324,7 @@ a:hover img {
 /* Style the container/contact section */
 .form-container {
   border-radius: 5px;
-  background-color: ;
+  background-color:black ;
   padding: 10px;
 }
 
@@ -435,7 +435,6 @@ a:hover img {
   }
   .form-col-img {
     margin: 0;
-
     max-height: auto;
     max-width: 300px;
   }
